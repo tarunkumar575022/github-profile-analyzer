@@ -1,0 +1,206 @@
+{
+  "info": {
+    "_postman_id": "ab12cd34-ef56-7890-1234-56789abcdef0",
+    "name": "GitHub Profile Analyzer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Analyze Profile",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/analyze/:username",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze",
+            ":username"
+          ],
+          "variable": [
+            {
+              "key": "username",
+              "value": "torvalds"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Get Profiles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/profiles?page=1&limit=10",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "profiles"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Get Single Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/profiles/:username",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "profiles",
+            ":username"
+          ],
+          "variable": [
+            {
+              "key": "username",
+              "value": "torvalds"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Delete Profile",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/profiles/:username",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "profiles",
+            ":username"
+          ],
+          "variable": [
+            {
+              "key": "username",
+              "value": "torvalds"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Get Profile Repositories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/profiles/:username/repos?language=C",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "profiles",
+            ":username",
+            "repos"
+          ],
+          "query": [
+            {
+              "key": "language",
+              "value": "C"
+            }
+          ],
+          "variable": [
+            {
+              "key": "username",
+              "value": "torvalds"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Get Stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/stats",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7. Compare Profiles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/compare?users=torvalds,yyx990803",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "compare"
+          ],
+          "query": [
+            {
+              "key": "users",
+              "value": "torvalds,yyx990803"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    }
+  ]
+}
